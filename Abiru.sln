@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abiru", "Abiru\Abiru.csproj", "{473D9762-B970-4C1A-8925-7C7093A28CCC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbiruAPI", "..\AbiruAPI\AbiruAPI\AbiruAPI.csproj", "{84E165DF-A2F3-4E73-9EE7-51240F86DD8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{473D9762-B970-4C1A-8925-7C7093A28CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473D9762-B970-4C1A-8925-7C7093A28CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473D9762-B970-4C1A-8925-7C7093A28CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473D9762-B970-4C1A-8925-7C7093A28CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E165DF-A2F3-4E73-9EE7-51240F86DD8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E165DF-A2F3-4E73-9EE7-51240F86DD8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E165DF-A2F3-4E73-9EE7-51240F86DD8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E165DF-A2F3-4E73-9EE7-51240F86DD8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8555273-E57E-4AB3-AA4A-2D548CA392E4}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,90 @@
+﻿@page
+@model Abiru.Pages.RegistroModel
+@{
+}
+<div id="app" class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <img src="~/lib/imgs/bluebear.jpg" style="width: 550px;" />
+                </div>
+                <div class="col">
+                    <form>
+                        <div class="form-group">
+                            <label for="InputNombre">Nombre</label>
+                            <input type="text" class="form-control" v-model="usuario.nombre" id="Nombre" aria-describedby="NombreUsuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputDNI">DNI</label>
+                            <input type="text" class="form-control" v-model="usuario.dni" id="Dni" aria-describedby="DniUsuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputEmail">Email</label>
+                            <input type="email" class="form-control" v-model="usuario.email" id="Email" aria-describedby="EmailUsuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputDistrito">Distrito</label>
+                            <select class="form-control" v-model="usuario.distrito" id="exampleFormControlSelect1">
+                                <option v-for="item in distritos" v-bind:value=item.idDist>{{item.nombre}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputPass">Contraseña</label>
+                            <input type="password" class="form-control" v-model="usuario.pass" id="Password">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Acepto los términos y condiciones de Abiru.</label>
+                        </div>
+                        <div class="text-center">
+                            <a href="../Login" type="submit" class="btn btn-primary" @@click="Registrar">Registrate</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            distritos: [],
+            usuario: {
+                nombre: "",
+                dni: "",
+                email: "",
+                distrito: 0,
+                pass: "",
+                Categoria: "U"
+            }
+        },
+        mounted: function() {
+            this.Listar();
+        },
+        methods: {
+            Listar: function() {
+                var url = "https://localhost:7048/api/Abiru/ListaDist";
+                this.$http.get(url).then(function(response) {
+                    this.distritos = response.body;
+                });
+            },
+            Registrar: function() {
+                var url = "https://localhost:7048/api/Abiru/Registrar";
+                this.$http.post(url, this.usuario).then(function(response) {
+                    if (response.status == 200)
+                        alert("Usuario creado con éxito");
+                    else
+                        alert("Ha ocurrido un problema al crear usuario, intentelo nuevamente más tarde");
+
+                });
+            }
+        }
+    })
+</script>
